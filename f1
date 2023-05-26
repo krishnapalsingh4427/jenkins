@@ -1,0 +1,40 @@
+
+to install jenkins on your linux run all 4 command below
+
+
+curl -fsSL https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key | sudo tee \
+  /usr/share/keyrings/jenkins-keyring.asc > /dev/null
+echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \
+  https://pkg.jenkins.io/debian-stable binary/ | sudo tee \
+  /etc/apt/sources.list.d/jenkins.list > /dev/null
+sudo apt-get update
+sudo apt-get install jenkins
+
+install java
+sudo apt update
+sudo apt install openjdk-11-jre
+java -version
+openjdk version "11.0.12" 2021-07-20
+OpenJDK Runtime Environment (build 11.0.12+7-post-Debian-2)
+OpenJDK 64-Bit Server VM (build 11.0.12+7-post-Debian-2, mixed mode, sharing)
+
+
+
+to start jenkins 
+Start Jenkins
+You can enable the Jenkins service to start at boot with the command:
+
+sudo systemctl enable jenkins
+You can start the Jenkins service with the command:
+
+sudo systemctl start jenkins
+You can check the status of the Jenkins service using the command:
+
+sudo systemctl status jenkins
+
+
+make sure port 8080 is open for your security group 
+now copy public ip of your instance and search it on your browser like this
+http://34.219.153.62:8080/
+
+
